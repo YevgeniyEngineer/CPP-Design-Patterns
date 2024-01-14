@@ -3,14 +3,14 @@
 template <typename Derived, typename T> class Numeric
 {
   public:
-    Derived &operator+=(const Derived &other)
+    Derived &operator+=(const Derived &other) noexcept
     {
         Derived &self = static_cast<Derived &>(*this);
         self.value_ += other.value_;
         return self;
     }
 
-    Derived &operator-=(const Derived &other)
+    Derived &operator-=(const Derived &other) noexcept
     {
         Derived &self = static_cast<Derived &>(*this);
         self.value_ -= other.value_;
@@ -23,11 +23,11 @@ template <typename Derived, typename T> class Numeric
     }
 
   protected:
-    Numeric() : value_{0}
+    Numeric() noexcept : value_{0}
     {
     }
 
-    Numeric(T value) : value_{value}
+    Numeric(T value) noexcept : value_{value}
     {
     }
 
@@ -40,11 +40,11 @@ template <typename Derived, typename T> class Numeric
 class Integer final : public Numeric<Integer, int>
 {
   public:
-    Integer() : Numeric()
+    Integer() noexcept : Numeric()
     {
     }
 
-    Integer(int value) : Numeric(value)
+    Integer(int value) noexcept : Numeric(value)
     {
     }
 };
@@ -52,11 +52,11 @@ class Integer final : public Numeric<Integer, int>
 class Float final : public Numeric<Float, float>
 {
   public:
-    Float() : Numeric()
+    Float() noexcept : Numeric()
     {
     }
 
-    Float(float value) : Numeric(value)
+    Float(float value) noexcept : Numeric(value)
     {
     }
 };

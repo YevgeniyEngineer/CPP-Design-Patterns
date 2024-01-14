@@ -5,4 +5,6 @@ project(cpp_design_patterns)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(curiously_recurring_template_pattern ./src/curiously_recurring_template_pattern)
+add_executable(curiously_recurring_template_pattern src/curiously_recurring_template_pattern.cpp)
+add_executable(interface_segregation_principle src/interface_segregation_principle.cpp)
+add_executable(dependency_inversion_principle src/dependency_inversion_principle.cpp)
