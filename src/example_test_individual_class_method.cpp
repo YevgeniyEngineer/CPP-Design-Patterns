@@ -56,7 +56,7 @@ template <typename Derived> class Base : public SharedBase
 };
 
 /// @brief Derived class, providing non-default implementation to the Base class
-class RealClass : public Base<RealClass>
+class RealClass final : public Base<RealClass>
 {
   public:
     /// @brief Default constructor
@@ -75,7 +75,7 @@ class RealClass : public Base<RealClass>
 };
 
 /// @brief Mock class, uses default operation
-class MockClass : public Base<MockClass>
+class MockClass final : public Base<MockClass>
 {
     // No override provided, uses default operation from Base
 };
