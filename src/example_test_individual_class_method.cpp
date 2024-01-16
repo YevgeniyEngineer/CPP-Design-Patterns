@@ -10,7 +10,6 @@ class SharedBase
     {
     }
 
-  public:
     /// @brief Virtual destructor of the shared base class
     virtual ~SharedBase() = default;
 
